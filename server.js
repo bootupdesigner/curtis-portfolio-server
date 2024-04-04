@@ -46,13 +46,13 @@ app.post("/send", async function (req, res) {
         const firstMailOptions = {
             from: req.body.mailerState.email,
             to: process.env.EMAIL,
-            subject: `Message from TRI Financial Services`,
+            subject: `Message from Curtis Shepard's Portfolio`,
             text: req.body.mailerState.message,
             html: `
             <div>
             <p>You've received a message from ${req.body.mailerState.name}</p>
             <p>Message from customer: ${req.body.mailerState.message}</p>
-            <p>Customer selected services:</p>       
+            <p>Reason for inquiry:</p>       
             <ul>
             ${selectedServices.map(service => `<li>${service}</li>`).join('')}
 
@@ -65,8 +65,8 @@ app.post("/send", async function (req, res) {
         const secondMailOptions = {
             from: process.env.EMAIL,
             to: req.body.mailerState.email,
-            subject: 'TRI Financial Services Response',
-            text: `Thanks for reaching us ${req.body.mailerState.name}. We'll be contacting you shortly`,
+            subject: `Curtis Shepard's Portfolio Response`,
+            text: `Thanks for reaching us ${req.body.mailerState.name}. Curtis will be contacting you shortly`,
 
         };
 
