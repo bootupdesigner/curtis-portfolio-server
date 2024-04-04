@@ -67,6 +67,19 @@ app.post("/send", async function (req, res) {
             to: req.body.mailerState.email,
             subject: `Curtis Shepard's Portfolio Response`,
             text: `Thanks for reaching us ${req.body.mailerState.name}. Curtis will be contacting you shortly`,
+            html:`
+            <div>
+            <h1>Curtis Shepard | Web Developer</h1>
+            <p>Hi ${req.body.mailerState.name},</p>
+            <p>Thank you for considering me for your open position:</p>
+            <ul>
+            ${selectedServices.map(service => `<li>${service}</li>`).join('')}
+            </ul>
+            <p>I an be reached by phone Monday - Friday from 8:00am to 2:00pm and from 4:00pm 8:00pm</p>
+            <br/>
+            <p>Thanks for reading,</p>
+            <span>Curtis Shepard</span>
+            </div>`
 
         };
 
