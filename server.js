@@ -53,22 +53,22 @@ app.post("/send", async function (req, res) {
             subject: `Message from Curtis Shepard's Portfolio`,
             text: req.body.mailerState.message,
             html: `
-            <div>
-            <p>You've received a message from ${req.body.mailerState.name}</p>
-            <p>Message from customer:</p>
+            <div style="padding:30px;">
+            <p style="font-size:18px;">You've received a message from ${req.body.mailerState.name}</p>
+            <p style="font-size:18px;">Message from customer:</p>
             <ul>
-                <li>${req.body.mailerState.message}</li>
+                <li style="font-size:18px;">${req.body.mailerState.message}</li>
             </ul>
-            <p>Reason for inquiry:</p>       
+            <p style="font-size:18px;">Reason for inquiry:</p>       
             <ul>
-                ${selectedServices.map(service => `<li>${service}</li>`).join('')}
+                ${selectedServices.map(service => `<li style="font-size:18px;">${service}</li>`).join('')}
             </ul>
-            <p>Preferred point of contact:</p>
+            <p style="font-size:18px;">Preferred point of contact:</p>
             <ul>
             ${selectedContact.map(contact => `<li>${contact}</li>`).join('')}
             </ul>
-            <p>Phone: ${req.body.mailerState.phone}</p>
-            <p>Email:${req.body.mailerState.email}</p>
+            <p style="font-size:18px;">Phone: ${req.body.mailerState.phone}</p>
+            <p style="font-size:18px;">Email: ${req.body.mailerState.email}</p>
         </div>`
         };
 
@@ -88,15 +88,15 @@ app.post("/send", async function (req, res) {
                 <p style="font-size:18px;">Thank you for considering me for your open position:</p>
 
                 <ul>
-                    ${selectedServices.map(service => `<li>${service}</li>`).join('')}
+                    ${selectedServices.map(service => `<li style="font-size:18px;">${service}</li>`).join('')}
 
                 </ul>
 
-                <p style="font-size:18px;">If you've left instructions to respond, I will contact you as sson as possible. I can be reached by <a href=tel:+19543489783>phone</a> or <a href=mailto:shepardcurtis2@gmail.com>email</a>, Monday - Friday from 8:00am to 2:00pm and from 4:00pm 8:00pm.</p>
+                <p style="font-size:18px;">If you've left instructions to respond, I will contact you as soon as possible. I can be reached by <a href="tel:+19543489783">phone</a> or <a href="mailto:shepardcurtis2@gmail.com">email</a>, Monday - Friday from 8:00am to 2:00pm and from 4:00pm 8:00pm.</p>
 
                 <br/>
 
-                <p>Thanks for reading,</p>
+                <p style="font-size:18px;">Thanks for reading,</p>
 
                 <br/>
 
